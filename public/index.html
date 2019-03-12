@@ -1,65 +1,178 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta charset="utf-8"/>
+		<meta name = "format-detection" content = "telephone=no"/>
+		<meta id="wixMobileViewport" name="viewport" content="width=980, user-scalable=yes"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/index.css">
+		<link rel="stylesheet" type="text/css" href="/css/google-fonts.css">
+		
+		<meta name="fragment" content="!"/>
+		<title>Mercy Affordable Housing</title>
+		<meta property="og:title" content="Mercy Affordable Housing"/>
+		<meta property="og:site_name" content="Mercy Affordable Housing"/>
+		<meta property="og:type" content="Website"/>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.8.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.8.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+		
+		<!-- Firebase App is always required and must be first -->
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+		<!-- Add additional services that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCLZtoUqIs3tBZad7V914KFuhzSWMal1yI",
+				authDomain: "cist-2100.firebaseapp.com",
+				databaseURL: "https://cist-2100.firebaseio.com",
+				projectId: "cist-2100",
+				storageBucket: "cist-2100.appspot.com",
+				messagingSenderId: "1041421286792"
+			};
+			var app = firebase.initializeApp(config);
+			var db = firebase.firestore(app);
+		</script>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+		
+
+		<!-- Custom JS Resources -->
+		<script src="/js/index.js"></script>
+		<script src="/js/index2.js"></script>
+	</head>
+	<body class="prewarmup">
+		<div id="SITE_CONTAINER">
+		
+			<div class="noop visual-focus-on" style="position:relative">
+
+				<div id="SITE_BACKGROUND" style="height:100%;top:50px;bottom:;left:;right:;position:" class="siteBackground">
+					<div id="SITE_BACKGROUND_previous_noPrev" class="siteBackgroundprevious">
+						<div id="SITE_BACKGROUNDpreviousImage" class="siteBackgroundpreviousImage"></div>
+						<div id="SITE_BACKGROUNDpreviousVideo" class="siteBackgroundpreviousVideo"></div>
+						<div id="SITE_BACKGROUND_previousOverlay_noPrev" class="siteBackgroundpreviousOverlay"></div>
+					</div>
+					<div id="SITE_BACKGROUND_current_e6zct_ihwenpcc1_bg" style="top:50px;height:100%;width:100%;background-color:rgba(255, 255, 255, 1);position:fixed" data-position="fixed" class="siteBackgroundcurrent">
+						<div id="SITE_BACKGROUND_currentImage_e6zct_ihwenpcc1_bg" style="position:absolute;top:0;height:100%;width:100%;background-image:url(https://static.wixstatic.com/media/da40edfa1e374f559be46c7aa7a532aa.jpg/v1/fill/w_480,h_320,al_c,q_80,usm_0.66_1.00_0.01,blur_2/da40edfa1e374f559be46c7aa7a532aa.jpg);background-size:cover;background-repeat:no-repeat;background-position:center center;object-position:50% 50%" data-type="bgimage" data-height="100%" class="siteBackgroundcurrentImage"></div>
+						<div id="SITE_BACKGROUNDcurrentVideo" class="siteBackgroundcurrentVideo"></div>
+						<div id="SITE_BACKGROUND_currentOverlay_e6zct_ihwenpcc1_bg" style="position:absolute;top:0;width:100%;height:100%" class="siteBackgroundcurrentOverlay"></div>
+					</div>
+				</div>
+				<div id="SITE_ROOT" class="SITE_ROOT" style="width:100%;min-width:980px;top:0px;padding-bottom:0" aria-hidden="false">
+					<div id="masterPage" class="mesh-layout" data-mesh-layout="grid">
+						<footer style="bottom:auto;left:0;margin-left:0;width:100%;min-width:980px;top:;right:;position:" class="style-jsnz726y_footer style-jsnz726y" data-site-width="980" data-fixedposition="false" data-isrunninginmobile="false" data-state=" " id="SITE_FOOTER">
+							<div style="left:0;width:100%" id="SITE_FOOTERscreenWidthBackground" class="style-jsnz726yscreenWidthBackground"></div>
+							<div style="width:100%" id="SITE_FOOTERcenteredContent" class="style-jsnz726ycenteredContent">
+								<div style="margin-left:calc((100% - 980px) / 2);width:980px" id="SITE_FOOTERbg" class="style-jsnz726ybg"></div>
+								<div id="SITE_FOOTERinlineContent" class="style-jsnz726yinlineContent">
+									<div id="SITE_FOOTERinlineContent-gridWrapper" data-mesh-internal="true">
+										<div id="SITE_FOOTERinlineContent-gridContainer" data-mesh-internal="true">
+											<div data-hide-prejs="true" style="width:70px;height:30px;top:;bottom:;left:;right:;position:" class="lb1" id="comp-ighn7sv3">
+												<ul aria-label="Social bar" id="comp-ighn7sv3itemsContainer" class="lb1itemsContainer">
+													<li style="width:30px;height:30px;margin-bottom:0;margin-right:10px;display:inline-block" class="lb1imageItem" id="comp-ighn7sv30image">
+														<a href="#" target="_blank" data-content="https://www.facebook.com/" data-type="external" rel="nofollow" id="comp-ighn7sv30imagelink" class="lb1imageItemlink">
+															<div data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-ighncwhl&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:true,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;Facebook - Grey Circle&quot;,&quot;uri&quot;:&quot;72a44c1b3b7c450287b9f4dd21be1548.png&quot;,&quot;width&quot;:200,&quot;height&quot;:200,&quot;alt&quot;:&quot;Facebook - Grey Circle&quot;,&quot;link&quot;:{&quot;type&quot;:&quot;ExternalLink&quot;,&quot;id&quot;:&quot;dataItem-igmgr5sf&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:true,&quot;schemaVersion&quot;:&quot;1.0&quot;,&quot;isHidden&quot;:false},&quot;url&quot;:&quot;#&quot;,&quot;target&quot;:&quot;_blank&quot;}},&quot;displayMode&quot;:&quot;fill&quot;}" style="width:30px;height:30px;position:absolute" data-style="position:absolute" class="lb1imageItemimage" id="comp-ighn7sv30imageimage"><img id="comp-ighn7sv30imageimageimage" alt="Facebook - Grey Circle" data-type="image"/></div>
+														</a>
+													</li>
+													<li style="width:30px;height:30px;margin-bottom:0;margin-right:10px;display:inline-block" class="lb1imageItem" id="comp-ighn7sv31image">
+														<a href="#" target="_blank" data-content="https://www.linkedin.com/" data-type="external" rel="nofollow" id="comp-ighn7sv31imagelink" class="lb1imageItemlink">
+															<div data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-ighncwhm&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:true,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;LinkedIn - Grey Circle&quot;,&quot;uri&quot;:&quot;2118d8383c3e40f98615a57c1fe12d70.png&quot;,&quot;width&quot;:200,&quot;height&quot;:200,&quot;alt&quot;:&quot;LinkedIn - Grey Circle&quot;,&quot;link&quot;:{&quot;type&quot;:&quot;ExternalLink&quot;,&quot;id&quot;:&quot;dataItem-igmgrvux&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;masterPage&quot;,&quot;isPreset&quot;:true,&quot;schemaVersion&quot;:&quot;1.0&quot;,&quot;isHidden&quot;:false},&quot;url&quot;:&quot;#&quot;,&quot;target&quot;:&quot;_blank&quot;}},&quot;displayMode&quot;:&quot;fill&quot;}" style="width:30px;height:30px;position:absolute" data-style="position:absolute" class="lb1imageItemimage" id="comp-ighn7sv31imageimage"><img id="comp-ighn7sv31imageimageimage" alt="LinkedIn - Grey Circle" data-type="image"/></div>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</footer>
+						<header data-is-mobile="false" data-state="fixedPosition" data-site-width="980" data-header-top="0" style="position:fixed;margin-top:0px;top:0;left:0;margin-left:0;width:100%;min-width:980px;z-index:50" class="style-jsnyxyad" id="SITE_HEADER">
+							<div style="left:0;width:100%" id="SITE_HEADERscreenWidthBackground" class="style-jsnyxyadscreenWidthBackground">
+								<div class="style-jsnyxyad_bg"></div>
+								<div class="style-jsnyxyad_outer">
+									<div class="style-jsnyxyad_inner"></div>
+								</div>
+							</div>
+							<div id="SITE_HEADERcenteredContent" class="style-jsnyxyadcenteredContent">
+								<div id="SITE_HEADERinlineContent" class="style-jsnyxyadinlineContent">
+									
+								</div>
+							</div>
+						</header>
+						<main data-is-mobile="false" data-is-mesh="true" data-site-width="980" style="left:0;margin-left:0;width:100%;min-width:980px;top:0;margin-top: 100px" class="pc1" data-state="" id="PAGES_CONTAINER">
+							<div style="left:0" id="PAGES_CONTAINERscreenWidthBackground" class="pc1screenWidthBackground"></div>
+							<div style="position:relative" id="PAGES_CONTAINERcenteredContent" class="pc1centeredContent">
+								<div style="display:none" id="PAGES_CONTAINERbg" class="pc1bg"></div>
+								<div style="position:relative" id="PAGES_CONTAINERinlineContent" class="pc1inlineContent">
+									<div style="width:100%">
+										<div data-ismobile="false" data-is-mesh-layout="true" style="height:100%;left:0;position:relative;" class="style-jsnzfzvz" id="e6zct">
+											<div style="margin-left:calc((100% - 980px) / 2);width:980px" id="e6zctbg" class="style-jsnzfzvzbg"></div>
+											<div id="e6zctinlineContent" class="style-jsnzfzvzinlineContent">
+												<style id="e6zct-mesh-styles">
+													
+												</style>
+												<div id="e6zctinlineContent-gridWrapper" data-mesh-internal="true">
+													<div id="e6zctinlineContent-gridContainer" data-mesh-internal="true">
+														<div data-packed="true" style="width:676px;height:auto;pointer-events:none" class="txtNew" id="comp-jsnynehl">
+															<h2 class="font_2" style="font-size:50px;"><span style="font-size:50px;">Mercy Affordable Housing</span></h2>
+														</div>
+														<div onclick="window.location='https://mercyaffordablehousing.tk/work-order.html';" id="comp-jsnzifb9" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="334" data-height="72" style="width:334px;height:72px;" class="style-jsnzljna" data-state="desktop shouldUseFlex center">
+															<div class="style-jsnzljna_left style-jsnzljna_shd"></div>
+															<div class="style-jsnzljna_right style-jsnzljna_shd"></div>
+															<div id="comp-jsnzifb9link" class="style-jsnzljnalink"><span id="comp-jsnzifb9label" class="style-jsnzljnalabel">Submit a work order</span></div>
+														</div>
+														<div data-packed="false" style="width:104px;height:auto;min-height:33px;pointer-events:none" data-min-height="33" class="txtNew" id="comp-jsnzj2m3">
+															<h1 class="font_0" style="font-size:22px;"><span style="font-size:22px;"><span style="font-family:lulo-clean-w01-one-bold,sans-serif;">- OR -</span></span></h1>
+														</div>
+														<div data-svg-id="5b2b0a3903004b6694d8fa0db50b7f01.svg" data-svg-type="shape" data-display-mode="stretch" data-strokewidth="0" data-viewbox="0 0 200 200" data-preserve-viewbox="ignore" style="width:400px;height:358px;" class="style-jsnyoc9n1" id="comp-jsnyoc3o">
+															<div id="comp-jsnyoc3olink" class="style-jsnyoc9n1link">
+																<div style="stroke-width:0;fill-opacity:1;stroke:rgba(59, 58, 58, 1);stroke-opacity:1;fill:#779BBA" class="style-jsnyoc9n1_comp-jsnyoc3o style-jsnyoc9n1_non-scaling-stroke style-jsnyoc9n1svg" id="comp-jsnyoc3osvg">
+																	<svg preserveAspectRatio="none" data-bbox="32.351 33.259 136.298 134.482" xmlns="http://www.w3.org/2000/svg" viewBox="32.351 33.259 136.298 134.482" role="img">
+																		<g>
+																			<path fill-rule="evenodd" clip-rule="evenodd" d="M168.282 88.417c-1.487-7.768-7.206-13.734-14.387-16.027 1.973-7.113-.004-15.049-5.851-20.522-6.282-5.88-15.266-7.267-22.797-4.25-2.558-7.58-9.47-13.383-18.104-14.249-8.039-.806-15.465 2.876-19.69 8.971-6.441-3.869-14.777-4.261-21.758-.321S54.908 53.202 55.136 60.578c-7.523.535-14.498 4.98-17.787 12.179-3.291 7.198-2.039 15.27 2.554 21.145-5.763 4.735-8.746 12.343-7.104 20.082 1.641 7.74 7.479 13.595 14.707 15.75-1.831 7.15.304 15.046 6.259 20.408 5.955 5.362 14.174 6.789 21.306 4.411 2.795 6.865 9.241 12.073 17.262 13.032 8.019.959 15.52-2.58 19.868-8.592 6.364 3.991 14.689 4.543 21.748.74 7.058-3.805 11.009-10.974 10.93-18.353 7.533-.39 14.596-4.701 18.03-11.834 3.434-7.133 2.344-15.226-2.131-21.187 5.856-4.625 8.991-12.173 7.504-19.942"/>
+																		</g>
+																	</svg>
+																</div>
+															</div>
+														</div>
+														<div class="style-jsnyqyx0_left-direction style-jsnyqyx0" data-disabled="false" style="width:262px;height:50px;" id="comp-jsnyn5qb">
+															<label style="padding-left:0;padding-right:20px;display:none;margin-bottom:14px;text-align:left;direction:ltr" for="comp-jsnyn5qbinput" id="comp-jsnyn5qblabel" class="style-jsnyqyx0label"></label><input type="password" style="padding-left:14px" value="" required="" placeholder="Password" class="has-custom-focus style-jsnyqyx0input" id="comp-jsnyn5qbinput" required/>
+															<p style="display:none" data-skinpart="message" id="comp-jsnyn5qbmessage" class="style-jsnyqyx0message"></p>
+														</div>
+														<div class="style-jsnytcai_left-direction style-jsnytcai" data-disabled="false" style="width:262px;height:50px;" id="comp-jsnytca2">
+															<label style="padding-left:0;padding-right:20px;display:none;margin-bottom:14px;text-align:left;direction:ltr" for="comp-jsnytca2input" id="comp-jsnytca2label" class="style-jsnytcailabel"></label><input type="text" style="padding-left:14px" value="" required="" placeholder="Email" class="has-custom-focus style-jsnytcaiinput" id="comp-jsnytca2input" required/>
+															<p style="display:none" data-skinpart="message" id="comp-jsnytca2message" class="style-jsnytcaimessage"></p>
+														</div>
+														<div id="comp-jsnywhqi" onclick="login()" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="142" data-height="40" style="width:142px;height:40px;" class="style-jsnyxnpo" data-state="desktop shouldUseFlex center">
+															<div class="style-jsnyxnpo_left style-jsnyxnpo_shd"></div>
+															<div class="style-jsnyxnpo_right style-jsnyxnpo_shd"></div>
+															<div id="comp-jsnywhqilink" class="style-jsnyxnpolink"><span id="comp-jsnywhqilabel" onclick="login()" class="style-jsnyxnpolabel" >Login</span></div><br>
+														</div>
+														<div data-packed="false" style="width:202px;height:auto;min-height:35px;pointer-events:none" data-min-height="35" class="txtNew" id="comp-jsnzkl46">
+															<h5 class="font_5" onclick="login">MAH Employee Login</h5>
+														</div>
+														<div id="comp-jt3vwgvu" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="161" data-height="40" style="width:161px;height:40px;" class="style-jt64nvbq" data-state="desktop shouldUseFlex center"><a href="https://mercyaffordablehousing.tk/forgot.html" target="_self" role="button" id="comp-jt3vwgvulink" class="style-jt64nvbqlink" style="text-decoration: none;"><span id="comp-jt3vwgvulabel" class="style-jt64nvbqlabel">Forgot Password?</span></a></div>
+														<div id="comp-jt64ldun" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="70" data-height="40" style="width:70px;height:40px;" class="style-jt64o02i" data-state="desktop shouldUseFlex center"><a href="https://mercyaffordablehousing.tk/sign-up.htm
+															" target="_self" role="button" id="comp-jt64ldunlink" class="style-jt64o02ilink" style="text-decoration: none;"><span id="comp-jt64ldunlabel" class="style-jt64o02ilabel">Sign Up</span></a></div>
+														<div id="comp-jt64lvjs" data-align="center" data-disabled="false" data-margin="0" data-should-use-flex="true" data-width="19" data-height="40" style="width:19px;height:40px;" class="style-jt64my2y" data-state="desktop shouldUseFlex center">
+															<div id="comp-jt64lvjslink" class="style-jt64my2ylink"><span id="comp-jt64lvjslabel" class="style-jt64my2ylabel">|</span></div>
+														</div>
+
+														<div id="e6zctinlineContent-wedge-3" data-mesh-internal="true"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</main>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
